@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head><div class="wrapper">
+		<title> MahSyar'i Fashion : Happiness Is Yours</title>
+		<img src="MahSyar'i Fashion.png" width="1195" height="640"></a>
+		<script type="text/javascript">
+			function total() {
+			if(document.form.kurir.value==1){
+				var hkurir = 28000;
+			}
+			else if(document.form.kurir.value==2){
+				var hkurir = 25000;
+			}
+			else{
+				var hkurir = 20000;
+			}
+			var tharga = (parseInt(document.form.sharga.value) * parseInt(document.form.jumlah.value))+hkurir;
+			var bilangan = tharga;
+			var	number_string = bilangan.toString(),
+				sisa 	= number_string.length % 3,
+				rupiah 	= number_string.substr(0, sisa),
+				ribuan 	= number_string.substr(sisa).match(/\d{3}/g);
+			if (ribuan) {
+				separator = sisa ? '.' : '';
+				rupiah += separator + ribuan.join('.');
+			}
+
+			document.form.tharga.value = 'Rp '+rupiah;
+		}
+		</script>	
+		<style type="text/css">
+		body {
+				color: #964B00;
+				background-color: bg.png;
+				background-position: center;
+				background-image: url('bg5.png');
+				font-family: Comic Sans MS;
+				margin: 0px;}
+		h3, h2{
+				color: #964B00;
+				font-family: Comic Sans MS;}
+		.link:hover{
+				color: red;}
+		.link:link{
+				color: brown;}
+		.link:active{
+				color: green;}
+		.link:visited{
+				background: yellow;}
+		nav {
+				color: #ffffff;
+				background-color: #FFA07A;	
+				height: 30px;}
+			nav ul {
+				margin: 0px;
+				padding: 5px 0px 5px 30px;}
+			nav li {
+				display: inline;
+				margin-right: 40px;}
+			nav li a {
+				color: #ffffff;}
+			nav li a:hover, nav li a.current {
+				color: #000000;}
+		.wrapper {
+				width: 1195px;
+				margin: 20px auto;
+				border: 2px solid #964B00;
+				background-color: #FFEFD5;}
+		.courses {
+				float: left;
+				width: 820px;
+				border-right: 1px solid #eeeeee;
+				border-left: 2px solid #FFA07A;
+				border-right: 2px solid #FFA07A;}	
+		courses {
+				float: right;
+				width: 780px;
+				border-right: 1px solid #eeeeee;}
+		.sidebar {
+				float: left;
+				width: 190px}
+		.element{
+				text-align:center;
+        		width: 820px;}
+		footer {
+				clear: both;
+				color: #ffffff;
+				background-color: #FFA07A;	
+				height: 120px;}
+		</style>
+		</head>
+	<body>
+			<header>
+			<p align="center"><marquee direction=left scrolldelay=32><font color="964B00"><br>Welcome To MahSyar'i Fashion : Happiness Is Yours</marquee></font></p>
+				<nav><center>
+					<ul>
+						<li><a href="h1.html">HOME</a></li>
+						<li><a href="h2.html">PROFILE</a></li>
+						<li><a href="h3.html">CONTACT</a></li>
+						<li><a href="tutorial.html">HOW TO BUY</a></li>
+					</ul>
+				</nav>
+			</header>
+			<aside>	
+				<section class="sidebar">
+					<br><h3><center>Kategori</h3><center>
+						<ul>
+							<li><DIV Align="Left"><a class="link" href="h4.html">   Top </a><br>
+							<li><DIV Align="Left"><a class="link" href="h4.1.html"> Skrit </a><br>
+							<li><DIV Align="Left"><a class="link" href="h4.2.html"> Long Dress </a><br>	
+						</ul>
+				</section>
+			</aside>
+			<section class="courses">
+			<form name="form" action="buy.php" method="post" onclick="total()">
+		<table align="center">
+			<tr>
+				<td align="left" rowspan="8"> <img src="rok1.jpg" width="300px"></td>
+				<h3><p align="center">Margot Skirt 01</p></font></h3></tr>
+					<input type="text" name="produk" value="<b>Margot Skirt 01</b>" hidden>
+					<input type="number" name="sharga" value="200000" hidden="" disabled="">
+				</tr>
+					<td>&nbsp;&nbsp;&nbsp;Nama <td>: <input type="text" name="nama" size="20"></tr>
+				<tr><td>&nbsp;&nbsp;&nbsp;E-mail <td>: <input type="text" name="email" size="20"></tr>
+				<tr><td>&nbsp;&nbsp;&nbsp;No. Handphone <td>: <input type="text" name="nohp" size="20"></input></tr>
+				<tr><td>&nbsp;&nbsp;&nbsp;Harga <td>: <input type="text" name="harga" value="Rp 200.000" readonly>
+				<tr><td>&nbsp;&nbsp;&nbsp;Jumlah<td>: <input type="text" name="jumlah" size="5"></tr>
+				<tr><td>&nbsp;&nbsp;&nbsp;Kurir <td>: <select size="1" name="kurir">
+				<option value="1">JNE,  <font color="blue"> Rp 28.000 (2-4 hari)</option>
+				<option value="2">JNT,  <font color="blue"> Rp 25.000 (3-5 hari)</option>
+				<option value="3">MahSyar'i Express,  <font color="blue"> Rp. 20.000 (4-6 hari)</option>
+				<tr><td>&nbsp;&nbsp;&nbsp;Total Harga<td>: <input type="text" name="tharga" readonly=""></tr>
+				<td align="left" rowspan="8"><tr><td>&nbsp;&nbsp;&nbsp;Alamat Pengiriman <td>: <textarea name="alamat" cols="10" rows="3"></textarea> </tr>
+				<tr><td>&nbsp;&nbsp;&nbsp;Kode Pos <td>: <input type="text" name="kodepos" size="5"></input></tr>
+				<tr><td colspan="2" align="center"><hr><input type="submit" value="Kirim" onclick="total()"><input type="reset"><input type="button" name="cekharga" value="Cek Total Harga" onclick="total()"><br><br></tr>
+			</tr>
+		</table>
+	</form>
+</content>
+</table>	
+</section>
+			<aside>
+				<section class=".courses">
+					<br><center><h3>Rekomendasi</h3>
+						<a href="h5.2.html">
+						<img src="atasan2.jpg"width=8.8% height=2.5%><br><br>
+						<a href="h5.12.html">
+						<img src="rok2.jpg"width=8.8% height=2.5%><br><br>
+						<a href="h5.18.html"></a>
+						<img src="gamis2.jpg"width=8.8% height=2.5%><br><br>
+				</section>
+			</aside>
+			<footer><center><br>
+				Copyright &copy; 2020 MahSyar'i Fashion : Toko Online Baju Muslim dan Busana Muslim<br>
+				Bandung - Jawa Barat<br>
+				INDONESIA</center><br></td>
+			</footer>
+		</div>
+	</body>
+</html>
